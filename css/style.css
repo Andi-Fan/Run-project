@@ -1,0 +1,310 @@
+
+/* import fonts from fonts.css file */ 
+@import url(./fonts.css);
+
+
+/* css variables */ 
+@import url(./partials/variables.css);
+
+/* import global styling */ 
+@import url(./partials/global.css);
+
+
+/* start navigation */ 
+
+
+
+.header_area .main-menu .navbar .navbar-brand{
+    padding: 0 2rem 0 1rem;
+}
+
+.header_area .main-menu .navbar{
+    background:white;
+    box-shadow: var(--box-shadow);
+}
+
+.header_area .main-menu .navbar .navbar-trans {
+    transition: all 0.3s ease;
+}
+
+.header_area .main-menu .navbar .navbar-trans .afterscroll { 
+    background: rgba(230, 262, 272, 0.9);
+    Transition:0.3s all linear;
+}
+
+.header_area .main-menu .navbar .nav-home{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font: normal 500 15px/2px var(--roboto);
+    text-transform: uppercase;
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+.header_area .main-menu .navbar{
+    padding: 1rem 20rem ;
+}
+
+
+.header_area .main-menu .nav-item .nav-link{
+    font: normal 500 15px/2px var(--roboto);
+    text-transform: uppercase;
+    padding: 1.7rem;
+    color: var(--title-color);
+}
+
+.header_area .main-menu .navbar-nav .active a{
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header_area .main-menu .navbar-nav a:hover{
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+
+/* Banner Area */ 
+
+.site-main .site-banner {
+    background: url() no-repeat 0% 50%;
+    padding-top: 17%;
+    padding-bottom: 2%;
+    padding-left: 10%;
+    position: relative;
+    box-shadow: var(--box-shadow);
+}
+
+.site-main .site-banner .social{
+    padding-top: 9%;
+    padding-right: 10%;
+    text-align: right;
+    font-size:22px;
+}
+
+.site-main .site-banner .social a:hover{
+    background: var(--primary-color2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; 
+}
+
+.header-social{
+    color: var(--primary-color);
+    font-size: x-large;
+}
+
+.site-main .site-banner .site-title h3{
+    font-weight: 500;
+}
+
+
+.site-main .site-banner .site-title h1{
+    font-size: 5rem;
+    color: var(--primary-color);
+}
+
+.site-main .site-banner .site-title h4{
+    font-size: 1.5rem;
+}
+
+
+
+
+/* About Area */ 
+
+.site-main .about-area{
+    padding-top: 8%;
+    padding-bottom: 6%;
+    padding-left: 10%;
+    box-shadow: var(--box-shadow);
+    
+}
+
+
+.site-main .about-area .about-title h2 > span{
+    display: block;
+    font: normal bold 49px/ 60px var(--roboto);
+}
+
+.site-main .about-title h2::after{
+    content: " ";
+    height: 2px;
+    width: 22vw;
+    background: black;
+    display: inline-block;
+}
+
+.site-main .about-area .about-title .paragraph > p{
+    padding: .4rem 0;
+}
+
+.site-main .about-area .about-image{
+    padding-top: 7%;
+    padding-left: 10%;
+}
+
+
+/* Skills Area */ 
+
+.site-main .skills-area{
+    padding-top: 8%;
+    padding-bottom: 4%;
+    box-shadow: var(--box-shadow);
+}
+
+.site-main .skills-area .skills-title{
+    padding: 0 14rem;
+}
+
+.site-main .skills-area .skills-title h1{
+    font-size: 35px;
+}
+
+.site-main > .skills-area .skills{
+    background: rgba(230, 262, 272, 0.973);
+    padding: 2rem 0;
+    width: 16rem;
+    margin: 5rem .5rem;
+    transition: box-shadow .7s ease;
+    box-shadow: var(--box-shadow);
+}
+
+.site-main > .skills-area .skills:hover{
+    box-shadow: var(--box-shadow);
+}
+
+
+/* Project Area -------------------------------------------------------------------------------------------------- */ 
+
+.site-main .project-area{
+    padding-left: 5%;
+    padding-top: 8%;
+    padding-bottom: 0%;
+    box-shadow: var(--box-shadow);
+  
+}
+
+
+.site-main .project-area .button-group button{
+    background: transparent;
+    border: none;
+    font: normal 500 16px/130px var(--roboto);
+    text-transform: uppercase;
+}
+
+.site-main .project-area .button-group button + button{
+    padding-left: 3rem;
+}
+
+.site-main .project-area .grid .projects > .title h4{
+    font: normal 400 20px/12px var(--roboto);
+}
+
+.site-main > .project-area .card{
+    padding-top: 2rem;
+    height: 20rem;
+    width: 20rem;
+    margin: 5rem .5rem;
+    transition: box-shadow .7s ease;
+    box-shadow: var(--box-shadow);
+    
+}
+.proj-text{
+    font-size: medium;
+    text-align: center;
+}
+
+.proj-lang-icon{
+    color: var(--primary-color);
+}
+
+.proj-card{
+    margin-top: 0 !important;
+    margin-right: 0 !important;
+}
+
+.site-main .project-area .gitlink{
+    align-self: flex-end;
+    font-size: xx-large;
+    color: var(--primary-color);
+}
+
+.proj-card a:hover{
+    background: var(--primary-color2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; 
+}
+
+.project-card-title{
+    margin-top: -2rem;
+    color: var(--primary-color);
+    font-size: large;
+    font-weight: bolder;
+}
+
+/* Contact -------------------------------------------------------------------------------------------------- */
+.site-main .contact-area{
+    padding-top: 13%;
+    padding-bottom: 11%;
+}
+
+.contact-title{
+    color: var(--title-color);
+}
+
+.eyecatch{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font: normal 700 15px/2px var(--roboto);
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.contact-para{
+    color: var(--text-color);
+    width: 550px;
+    padding-bottom: 3%;
+}
+
+
+.site-main .contact-area .contact-social{
+    padding-top: 2%;
+}
+
+.site-main .contact-area .contact-social a:hover{
+    background: var(--primary-color2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; 
+}
+
+.contact-social-link{
+    color: var(--primary-color);
+    font-size: x-large;
+}
+
+/* footer */
+.footer-area{
+    box-shadow: var(--box-shadow);
+    padding-top: 0.1rem;
+    background: rgba(230, 262, 272, 0.973);
+    
+}
+
+
+
+
+
+
