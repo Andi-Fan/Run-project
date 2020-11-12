@@ -1,5 +1,7 @@
 <?php
     ini_set('display_errors', 'On');
+    require_once "./models/db.php";
+    require_once "./models/users.php";
 
     session_save_path("sess");
     session_start(); 
@@ -15,7 +17,7 @@
       case "landing":
         // the view we display by default
         $views="landing.php";
-          
+        
 
         break;
 
