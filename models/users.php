@@ -17,11 +17,21 @@
 
         //Validate User
         public function validate(){
-            $query = 'select username from Accounts where username=? and password=?';
+            $query = 'select username from Accounts where username=? and password=?;';
 
             //prepare the query 
             $result = $this->conn->prepare($query);
 
+            $result->execute([$this->username, $this->password]);
+
+            return $result;
+        }
+
+        public function register(){
+            $query = 'insert into Accounts (username, password, email) Values(?, ?, ?);';
+
+            //prepare the query 
+            $result = $this->conn->prepare($query);
             $result->execute([$this->username, $this->password]);
 
             return $result;

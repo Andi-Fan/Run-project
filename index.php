@@ -10,30 +10,62 @@
     if(!isset($_SESSION['state'])){
 		$_SESSION['state']='landing';
     }
+
+    $db = new Database();
+    $db->connect();
+
+    /*if(!isset($_SESSION['db'])){
+      $_SESSION['db']= new Database();
+      $_SESSION['db'].connect();
+    }*/
     
     switch($_SESSION['state']){
 
-
+      // the view we display by default
       case "landing":
-        // the view we display by default
-        $views="landing.php";
+        $views = file_get_contents("./views/landing.php");
+      
+        if (isset($_REQUEST['login'])) {
+          $_SESSION['state']='login';
+          $views = file_get_contents("./views/login.php");
+        }
         
-
+        else if (isset($_REQUEST['register'])) {
+          $_SESSION['state']='register';
+          $views = file_get_contents("./views/register.php");
+        }
+        echo $views;
         break;
 
+      // load the page we view when logging in
       case "login":
-        // load the page we view when logging in
-        $views="landing.php";
-          
+        $views = file_get_contents("./views/login.php");
 
+        if (isset($_REQUEST['landing'])) {
+          $_SESSION['state']='landing';
+          $views = file_get_contents("./views/landing.php");
+        }
+
+        else if (isset($_REQUEST['register'])) {
+          $_SESSION['state']='register';
+          $views = file_get_contents("./views/register.php");
+        }
+        
+        echo $views;
         break;
 
-        case "register":
-          // load page we view when registering a new account
-          $views="landing.php";
-            
-  
-          break;
+
+      // load page we view when registering a new account
+      case "register":
+        $views = file_get_contents("./views/register.php");
+    
+        if (isset($_REQUEST['landing'])) {
+          $_SESSION['state']='landing';
+          $views = file_get_contents("./views/landing.php");
+        }
+
+
+        echo $views;
+        break;
       }
-	require_once "views/$views";
 ?>

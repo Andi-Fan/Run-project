@@ -37,16 +37,16 @@
 
 
           <li class="nav-item button-space">
-            <form action="index.php" method="post">
-              <input class="btn btn-primary btn-xl rounded-pill mt-5" type="submit" name="Register" value="Register"/>
+            <form action="index.php" method="get">
+              <input class="btn btn-primary btn-xl rounded-pill mt-5" type="submit" name="register" value="Register"/>
             </form>	 
           </li>
 
 
 
           <li class="nav-item">
-            <form action="index.php" method="post">
-              <input class="btn btn-primary btn-xl rounded-pill mt-5" type="submit" name="Login" value="Login"/>
+            <form action="index.php" method="get">
+              <input class="btn btn-primary btn-xl rounded-pill mt-5" type="submit" name="login" value="Login"/>
             </form>	 
           </li>
 
