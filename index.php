@@ -12,12 +12,9 @@
     }
 
     $db = new Database();
-    $db->connect();
+    $dbc = $db->connect();
 
-    /*if(!isset($_SESSION['db'])){
-      $_SESSION['db']= new Database();
-      $_SESSION['db'].connect();
-    }*/
+    
     
     switch($_SESSION['state']){
 
@@ -25,12 +22,12 @@
       case "landing":
         $views = file_get_contents("./views/landing.php");
       
-        if (isset($_REQUEST['login'])) {
+        if (isset($_REQUEST['loginpage'])) {
           $_SESSION['state']='login';
           $views = file_get_contents("./views/login.php");
         }
         
-        else if (isset($_REQUEST['register'])) {
+        else if (isset($_REQUEST['registerpage'])) {
           $_SESSION['state']='register';
           $views = file_get_contents("./views/register.php");
         }
@@ -46,7 +43,7 @@
           $views = file_get_contents("./views/landing.php");
         }
 
-        else if (isset($_REQUEST['register'])) {
+        else if (isset($_REQUEST['registerpage'])) {
           $_SESSION['state']='register';
           $views = file_get_contents("./views/register.php");
         }
@@ -62,6 +59,15 @@
         if (isset($_REQUEST['landing'])) {
           $_SESSION['state']='landing';
           $views = file_get_contents("./views/landing.php");
+        }
+
+        if (isset($_REQUEST['register'])) {
+          if (isset($_REQUEST['regUser']) && isset($_REQUEST['regPass']) && isset($_REQUEST['regMail'])){
+            $reg_user = new User($dbc);
+            $reg_user->register($_REQUEST['regUser'], $_REQUEST['regPass'], $_REQUEST['regMail']);
+          }
+
+        
         }
 
 

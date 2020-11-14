@@ -15,8 +15,8 @@ $_REQUEST['password']=!empty($_REQUEST['password']) ? $_REQUEST['password'] : ''
 
 <div class="sidenav">
          <div class="login-main-text">
-            <h2>Application<br> Login Page</h2>
-            <p>Login or register from here to access.</p>
+            <h2>Run Buddy<br> Login Page</h2>
+            <p>Login from here to access your metrics.</p>
          </div>
       </div>
       <div class="main">
@@ -32,7 +32,7 @@ $_REQUEST['password']=!empty($_REQUEST['password']) ? $_REQUEST['password'] : ''
                      <input type="password" class="form-control" placeholder="Password">
                   </div>
                   <button type="submit" class="btn btn-black" name="login">Login</button>
-				  <button type="submit" class="btn btn-secondary" name="register">Register</button>
+				  <button type="submit" class="btn btn-secondary" name="registerpage">Register</button>
 				  <button type="submit" class="btn btn-secondary" name="landing">Main</button>
                </form>
             </div>

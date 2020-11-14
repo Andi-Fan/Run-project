@@ -1,8 +1,8 @@
 <?php
 	class Database{
         //DB Params
-        private $host = 'lallah';
-        private $db_name = 'Run-project';
+        private $host = 'lallah.db.elephantsql.com';
+        private $db_name = 'liqxegml';
         private $username = 'liqxegml';
         private $password = 'QvoBlP5rv3Yqj-q6MvSRxadf-H00OHD4';
         private $conn;
@@ -12,7 +12,7 @@
 
             try{
                 $this->conn= new PDO('pgsql:host=' . $this->host . ';dbname= ' . $this->db_name, $this->username, $this->password);
-                if ($conn){
+                if ($this->conn){
                     echo "connected to db";
                 }
                 $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

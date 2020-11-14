@@ -25,11 +25,15 @@ $_REQUEST['password']=!empty($_REQUEST['password']) ? $_REQUEST['password'] : ''
                <form action="index.php" method="get">
                   <div class="form-group">
                      <label>User Name</label>
-                     <input type="text" class="form-control" placeholder="User Name">
+                     <input type="text" class="form-control" placeholder="User Name" name="regUser">
                   </div>
                   <div class="form-group">
                      <label>Password</label>
-                     <input type="password" class="form-control" placeholder="Password">
+                     <input type="password" class="form-control" placeholder="Password" name="regPass">
+                  </div>
+                  <div class="form-group">
+                     <label>Email</label>
+                     <input type="password" class="form-control" placeholder="Password" name="regMail">
                   </div>
 				  <button type="submit" class="btn btn-secondary" name="register">Register</button>
 				  <button type="submit" class="btn btn-secondary" name="landing">Main</button>

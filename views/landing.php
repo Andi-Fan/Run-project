@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>One Page Wonder - Start Bootstrap Template</title>
+  <title>Run Buddy landing page template</title>
 
   <!-- Bootstrap core CSS -->
   <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <a class="navbar-brand" href="#">Run Buddy</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -38,7 +38,7 @@
 
           <li class="nav-item button-space">
             <form action="index.php" method="get">
-              <input class="btn btn-primary btn-xl rounded-pill mt-5" type="submit" name="register" value="Register"/>
+              <input class="btn btn-primary btn-xl rounded-pill mt-5" type="submit" name="registerpage" value="Register"/>
             </form>	 
           </li>
 
@@ -46,7 +46,7 @@
 
           <li class="nav-item">
             <form action="index.php" method="get">
-              <input class="btn btn-primary btn-xl rounded-pill mt-5" type="submit" name="login" value="Login"/>
+              <input class="btn btn-primary btn-xl rounded-pill mt-5" type="submit" name="loginpage" value="Login"/>
             </form>	 
           </li>
 
@@ -117,7 +117,7 @@
         </div>
         <div class="col-lg-6 order-lg-1">
           <div class="p-5">
-            <h2 class="display-4">Let there be rock!</h2>
+            <h2 class="display-4">Stay Consistent!</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
           </div>
         </div>

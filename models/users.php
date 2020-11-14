@@ -8,31 +8,28 @@
         public $email;
         public $password;
 
-        public function __construct($db, $username, $password, $email){
+        public function __construct($db){
             $this->conn = $db;
-            $this->username = $username;
-            $this->password = $password;
-            $this->email = $email;
         }
 
         //Validate User
-        public function validate(){
-            $query = 'select username from Accounts where username=? and password=?;';
+        public function login($username, $password){
+            $query = 'select username from Account where username=? and password=?;';
 
             //prepare the query 
             $result = $this->conn->prepare($query);
 
-            $result->execute([$this->username, $this->password]);
+            $result->execute([$username, $password]);
 
             return $result;
         }
 
-        public function register(){
-            $query = 'insert into Accounts (username, password, email) Values(?, ?, ?);';
+        public function register($username, $password, $email){
+            $query = 'insert into Account (username, password, email) Values(?, ?, ?);';
 
             //prepare the query 
             $result = $this->conn->prepare($query);
-            $result->execute([$this->username, $this->password]);
+            $result->execute([$username, $password, $email]);
 
             return $result;
         }
