@@ -16,17 +16,26 @@
 
         //Validate User
         public function login($username, $password){
-            $query = 'select username from Account where username=? and password=?;';
-
+            $query = 'select password from Account where username=?;';
+          
             //prepare the query 
             $result = $this->conn->prepare($query);
 
-            $result->execute(array($username, $password));
-            $row = $result->fetch();
+            $result->execute(array($username));
+            
+
+            $row = $result->fetch(PDO::FETCH_ASSOC);
             if (!$row){
                 return false;
             }
-            return true; 
+            $hash = $row['password'];
+            if (password_verify($password, $hash)){
+                return true;
+            }
+            return false; 
+            
+            
+            
         }
 
         public function register($username, $password, $email){
@@ -34,7 +43,9 @@
 
             //prepare the query 
             $result = $this->conn->prepare($query);
-            $result->execute([$username, $password, $email]);
+
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+            $result->execute([$username, $hashed_password, $email]);
 
             return $result;
         }
