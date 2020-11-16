@@ -8,8 +8,10 @@
         public $email;
         public $password;
 
-        public function __construct($db){
-            $this->conn = $db;
+        public function __construct(){
+            $db = new Database();
+            $this->conn = $db->connect();
+
         }
 
         //Validate User
@@ -19,9 +21,12 @@
             //prepare the query 
             $result = $this->conn->prepare($query);
 
-            $result->execute([$username, $password]);
-
-            return $result;
+            $result->execute(array($username, $password));
+            $row = $result->fetch();
+            if (!$row){
+                return false;
+            }
+            return true; 
         }
 
         public function register($username, $password, $email){

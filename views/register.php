@@ -33,10 +33,11 @@ $_REQUEST['password']=!empty($_REQUEST['password']) ? $_REQUEST['password'] : ''
                   </div>
                   <div class="form-group">
                      <label>Email</label>
-                     <input type="password" class="form-control" placeholder="Password" name="regMail">
+                     <input type="text" class="form-control" placeholder="Email" name="regMail">
                   </div>
 				  <button type="submit" class="btn btn-secondary" name="register">Register</button>
-				  <button type="submit" class="btn btn-secondary" name="landing">Main</button>
+                  <button type="submit" class="btn btn-secondary" name="landing">Main</button>
+                  <button type="submit" class="btn btn-secondary" name="loginpage">Login</button>
                </form>
             </div>
          </div>
