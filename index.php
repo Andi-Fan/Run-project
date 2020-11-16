@@ -49,13 +49,14 @@
         }
 
         if (isset($_REQUEST['login'])) {
-          if (isset($_REQUEST['logUser']) && isset($_REQUEST['logPass'])){
-            session_regenerate_id();
+          if (!empty($_REQUEST['logUser']) && !empty($_REQUEST['logPass'])){
             $user = new User();
             //login returns true if user is validated and false otherwise
-            $status = $user->login($_REQUEST['logUser'], $_REQUEST['logPass']);
-            
+            $logUser = htmlspecialchars($_REQUEST['logUser']);
+            $logPass = htmlspecialchars($_REQUEST['logPass']);
+            $status = $user->login($logUser, $logPass);
             if ($status){
+              session_regenerate_id();
               //add webtoken here
               $_SESSION['state']='dashboard';
               $views = $views = file_get_contents("./views/dashboard.php");
@@ -82,9 +83,12 @@
         }
 
         if (isset($_REQUEST['register'])) {
-          if (isset($_REQUEST['regUser']) && isset($_REQUEST['regPass']) && isset($_REQUEST['regMail'])){
+          if (!empty($_REQUEST['regUser']) && !empty($_REQUEST['regPass']) && !empty($_REQUEST['regMail'])){
             $reg_user = new User();
-            $reg_user->register($_REQUEST['regUser'], $_REQUEST['regPass'], $_REQUEST['regMail']);
+            $regUser = htmlspecialchars($_REQUEST['regUser']);
+            $regPass = htmlspecialchars($_REQUEST['regPass']);
+            $regMail = htmlspecialchars($_REQUEST['regMail']);
+            $reg_user->register($regUser, $regPass, $regMail);
           } 
         }
 
